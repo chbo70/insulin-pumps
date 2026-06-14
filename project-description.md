@@ -23,6 +23,8 @@ Das System wird durch drei gekoppelte gewöhnliche Differentialgleichungen (ODEs
 
 [Homotopy perturbation approximate solutions for Bergman’s minimal blood glucose-insulin model](https://www.oatext.com/homotopy-perturbation-approximate-solutions-for-bergmans-minimal-blood-glucose-insulin-model.php)
 
+[Implementation of Bergman Minimal Model](https://jckantor.github.io/CBE30338/B.01-Diabetes-Controlling-Blood-Glucose-Concentrations.html)
+
 ### 2.1 Glukose-Kinetik (Blood Glucose Dynamics)
 Diese Gleichung beschreibt die zeitliche Änderung der Blutzuckerkonzentration $G(t)$. Sie hängt vom Glukoseabbau durch das Insulin im "Remote Compartment" $X(t)$, der basalen Glukoseproduktion der Leber und der externen Störgröße (Mahlzeit) ab.
 
@@ -30,7 +32,7 @@ $$\frac{dG(t)}{dt} = -(p_1 + X(t))G(t) + p_1 G_b + D(t)$$
 
 * $G(t)$: Blutzuckerkonzentration [mg/dL]
 * $G_b$: Basaler Blutzuckerspiegel (Steady-State, ca. 81-100 mg/dL)
-* $p_1$: Glukose-Effektivität (rate of insulin-independent glucose utilization) [min$^{-1}$]
+* $p_1$: Glukose-Effektivität (rate of insulin-independent glucose utilization) [$min^{-1}$]
 * **$D(t)$:** Die Störgröße (Disturbance) – repräsentiert den Glukose-Einstrom durch eine Mahlzeit ("Spike").
 
 ### 2.2 Insulinwirkung im Gewebe (Insulin Action / Remote Compartment)
@@ -38,20 +40,20 @@ Bergman (1979) fand heraus, dass Insulin nicht instantan im Blutplasma wirkt, so
 
 $$\frac{dX(t)}{dt} = -p_2 X(t) + p_3(I(t) - I_b)$$
 
-* $X(t)$: Insulinwirkung auf die Glukoseaufnahme (proportional zur Insulinkonzentration im Interstitium) [min$^{-1}$]
-* $I(t)$: Plasmainsulinkonzentration [$\mu$U/mL]
-* $I_b$: Basales Plasmainsulin [$\mu$U/mL]
-* $p_2$: Abbaurate der Insulinwirkung [min$^{-1}$]
-* $p_3$: Transportrate von Insulin aus dem Blutplasma in das "Remote Compartment" [min$^{-2}$ per $\mu$U/mL]
+* $X(t)$: Insulinwirkung auf die Glukoseaufnahme (proportional zur Insulinkonzentration im Interstitium) [$min^{-1}$]
+* $I(t)$: Plasmainsulinkonzentration [$\mu U/mL$]
+* $I_b$: Basales Plasmainsulin [$\mu U/mL$]
+* $p_2$: Abbaurate der Insulinwirkung [$min^{-1}$]
+* $p_3$: Transportrate von Insulin aus dem Blutplasma in das "Remote Compartment" [$min^{-2}$ per $\mu U/mL$]
 
 ### 2.3 Plasmainsulin-Kinetik (Plasma Insulin Dynamics)
 Diese Gleichung beschreibt, wie sich das Insulin im Blutplasma verändert. Hier greift unser Regler (die Pumpe) ein.
 
 $$\frac{dI(t)}{dt} = -n(I(t) - I_b) + \frac{U(t)}{V_I}$$
 
-* $n$: Fraktionale Clearance-Rate des Insulins aus dem Blutplasma [min$^{-1}$]
+* $n$: Fraktionale Clearance-Rate des Insulins aus dem Blutplasma [$min^{-1}$]
 * $V_I$: Insulin-Verteilungsvolumen [L]
-* **$U(t)$:** Die Stellgröße (Control Input) – die exogene Insulinzufuhr durch unsere Pumpe (gesteuert durch den PID-Regler) [$\mu$U/min].
+* **$U(t)$:** Die Stellgröße (Control Input) – die exogene Insulinzufuhr durch unsere Pumpe (gesteuert durch den PID-Regler) [$\mu U/min$].
 
 ---
 
