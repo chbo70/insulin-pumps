@@ -21,6 +21,8 @@ Die Basis bilden die Herleitungen von Bergman et al. (1979) und die retrospektiv
 
 Das System wird durch drei gekoppelte gewöhnliche Differentialgleichungen (ODEs) beschrieben:
 
+[Homotopy perturbation approximate solutions for Bergman’s minimal blood glucose-insulin model](https://www.oatext.com/homotopy-perturbation-approximate-solutions-for-bergmans-minimal-blood-glucose-insulin-model.php)
+
 ### 2.1 Glukose-Kinetik (Blood Glucose Dynamics)
 Diese Gleichung beschreibt die zeitliche Änderung der Blutzuckerkonzentration $G(t)$. Sie hängt vom Glukoseabbau durch das Insulin im "Remote Compartment" $X(t)$, der basalen Glukoseproduktion der Leber und der externen Störgröße (Mahlzeit) ab.
 
